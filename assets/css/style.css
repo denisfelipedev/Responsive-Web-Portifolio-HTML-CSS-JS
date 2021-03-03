@@ -5,11 +5,68 @@
   text-decoration: none;
 }
 
+/* All the similar content styling here */
+
 .max-width {
   max-width: 1300px;
   padding: 0 80px;
   margin: auto;
 }
+
+
+.about .about-content,
+.services .serv-content,
+.skills .skills-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about,
+.services,
+.skills {
+  font-family: "Poppins", sans-serif;
+}
+
+section {
+  padding: 100px 0;
+}
+
+section .title {
+  position: relative;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 60px;
+  padding-bottom: 20px;
+  font-family: "Ubuntu", sans-serif;
+}
+
+section .title::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  width: 200px;
+  height: 3px;
+  background: #111;
+  /* margin: 0 auto; */
+  transform: translateX(-50%);
+}
+
+section .title::after {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  font-size: 20px;
+  color: crimson;
+  padding: 5px;
+  background: #fff;
+  /* margin: 0 auto; */
+  transform: translateX(-50%);
+}
+
 
 /* Navbar Styling */
 
@@ -46,7 +103,7 @@
 }
 
 .navbar.sticky li a:hover {
-  color: crimson;
+  color: #ef4e6e;
 }
 
 .navbar .menu li {
@@ -114,10 +171,6 @@
   font-weight: 500;
 }
 
-/* .home .home-content {
-    border: 1px solid red;
-} */
-
 .home .home-content a {
   display: inline-block;
   background: crimson;
@@ -136,64 +189,12 @@
   background: none;
 }
 
-/* All the similar content styling here */
-
-section {
-  padding: 100px 0;
-}
-
-section .title {
-  position: relative;
-  text-align: center;
-  font-size: 40px;
-  font-weight: 500;
-  margin-bottom: 60px;
-  padding-bottom: 20px;
-  font-family: "Ubuntu", sans-serif;
-}
-
-section .title::before {
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  left: 50%;
-  width: 200px;
-  height: 3px;
-  background: #111;
-  /* margin: 0 auto; */
-  transform: translateX(-50%);
-}
-
-section .title::after {
-  position: absolute;
-  bottom: -12px;
-  left: 50%;
-  font-size: 20px;
-  color: crimson;
-  padding: 5px;
-  background: #fff;
-  /* margin: 0 auto; */
-  transform: translateX(-50%);
-}
-
 /* About section Styling */
-
-.about,
-.services {
-  font-family: "Poppins", sans-serif;
-}
 
 .about .title::after {
   content: "quem sou eu";
 }
 
-.about .about-content,
-.services .serv-content {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-}
 
 .about .about-content .left {
   width: 45%;
@@ -296,6 +297,103 @@ section .title::after {
   margin: 10px 0 7px 0;
 }
 
+/* Skills secttion styling here */
+
+.skills .title::after {
+  content: "o que eu sei";
+}
+
+.skills .skills-content .column {
+  width: calc(50% - 30px);
+}
+
+.skills .skills-content .left .text {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.skills .skills-content .left p {
+  text-align: justify;
+}
+
+.skills .skills-content .left a {
+  display: inline-block;
+  background: crimson;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 16px;
+  margin-top: 20px;
+  border-radius: 8px;
+  border: 2px solid crimson;
+  transition: all 0.3s ease;
+}
+
+.skills .skills-content .left a:hover {
+  background: none;
+  color: crimson;
+}
+
+.skills .skills-content .right .bars {
+  margin-bottom: 15px;
+}
+
+.skills .skills-content .right .info {
+  display: flex;
+  margin-bottom: 5px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.skills .skills-content .right span {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.skills .skills-content .right .line {
+  height: 5px;
+  width: 100%;
+  background: lightgray;
+  position: relative;
+}
+
+.skills .skills-content .right .line::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: crimson;
+}
+
+.skills .skills-content .right .html::before {
+  width: 70%;
+}
+.skills .skills-content .right .css::before {
+  width: 60%;
+}
+.skills .skills-content .right .js::before {
+  width: 30%;
+}
+.skills .skills-content .right .nodejs::before {
+  width: 50%;
+}
+.skills .skills-content .right .mysql::before {
+  width: 40%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* Responsive Media Query Starts here */
 
 @media (max-width: 1300px) {
@@ -392,6 +490,11 @@ section .title::after {
   .services .serv-content .card {
     width: calc(50% - 10px);
     margin-bottom: 20px;
+  }
+
+  .skills .skills-content .column {
+    width: 100%;
+    margin-bottom: 35px;
   }
 }
 
